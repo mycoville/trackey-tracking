@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+<!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+<!--[if IE 8]><html class="preIE9"><![endif]-->
+<!--[if gte IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>TRACKEY TRACKING - COMBAT TRACKER</title>
+	<link rel="stylesheet" href="styling/styles.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1 class="title_main">TRACKEY TRACKING!</h1>
+		<div class="centered">
+			<div onclick="setLocal()" class="btn_div" style="background-image:url(./images/ic_save.png)" title="&#10;Save data to browser cache&#10;&nbsp;">&nbsp;</div>
+			<div onclick="getLocal()" class="btn_div" style="background-image:url(./images/ic_reload.png)" title="&#10;Load data from browser cache&#10;&nbsp;">&nbsp;</div>
+			<div onclick="removeLocal()" class="btn_div" style="background-image:url(./images/ic_remove.png)" title="&#10;Remove data from browser cache&#10;&nbsp;">&nbsp;</div>
+			<label id="import-field-label" for="import-field" title="&#10;Upload data from a JSON file&#10;&nbsp;">
+				<div class="btn_div" style="background-image:url(./images/ic_json_up.png)">
+				&nbsp;
+				</div>
+			</label>
+			<input type="file" id="import-field">
+			<a id="btn_download"><div class="btn_div" style="background-image:url(./images/ic_json_down.png)" title="&#10;Save data to a JSON file&#10;&nbsp;">&nbsp;</div></a>
+			<br><br>
+		</div>
+		<div id="add">
+			<div id="btn_add" onclick="createActor()" class="btn_div" style="background-image:url(./images/ic_characterplus.png)" title="&#10;Add new Actor&#10;&nbsp;">&nbsp;</div>
+			<div id="btn_openall" onclick="openAll()" class="btn_div" style="background-image:url(./images/ic_expand.png)" title="&#10;Expand all Actors&#10;&nbsp;">&nbsp;</div>
+			<div id="btn_closeall" onclick="closeAll()" class="btn_div" style="background-image:url(./images/ic_collapse.png)" title="&#10;Collapse all Actors&#10;&nbsp;">&nbsp;</div>
+			<div id="btn_addround" onclick="addRound2All()" class="btn_div" style="background-image:url(./images/ic_roundplus.png)" title="&#10;Add 1 round to all Actors&#10;&nbsp;">&nbsp;</div>
+		</div>
+		<div id="list">
+		</div>
+	</div>
+	<div class="dynamic-forms">
+		<textarea id="textarea-character" maxlength="128"></textarea><br>
+		<button id="btn_textarea" onclick='changeActorText()'>CHANGE TEXT</button>
+	</div>
+	<div id="panel-inputinfo">
+	PRESS <span>§</span> FOR KEY INPUT
+	</div>
+	<div id="panel-keyinput">LISTENING FOR KEY INPUT
+	<span class="first">.</span>
+	<span class="second">.</span>
+	<span class="third">.</span>
+	<br><br>
+	<b>§ (and other characters)</b> = Stop listening to key input<br>
+	<br>
+	S = Save (to cache)<br>
+	L = Load (from cache)<br>
+	<br>
+	A = Add new character<br>
+	C = Close all<br>
+	O = Open all<br>
+	<br>
+	F = Switch to first character<br>
+	N = Switch to next character<br>
+	P = Switch to previous character<br>
+	<br>
+	Q = Disable key input <b>completely</b>
+	<br>
+	</div>
+	<div id="panel-alerts">
+	ALERT!
+	</div>
+	<script src="js/functionalities.js" type="text/javascript"></script>
+</body>
+
+</html>
